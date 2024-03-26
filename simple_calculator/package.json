@@ -1,0 +1,16 @@
+{
+  "name": "simple_calculator",
+  "version": "1.0.0",
+  "description": "A simple calculator which perform Basic Addition, Substraction, Muliplication, Division",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "simple",
+    "calculator"
+  ],
+  "author": "Huzaifa Mukhtar'",
+  "license": "ISC"
+}
