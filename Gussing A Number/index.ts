@@ -50,4 +50,5 @@ if (answer.userguess >= 1 && answer.userguess <= 10) {
 } else {
   console.log("Please Enter the Number 1-10");
 }
-
+console.log(`Thank you for using this program ❤  😍`)
+console.log(`Developed By: Huzaifa Mukhtar`);
