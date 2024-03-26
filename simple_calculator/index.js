@@ -1,12 +1,12 @@
 import inquirer from "inquirer";
 const answer = await inquirer.prompt([
     {
-        message: "Enter The First Digit",
+        message: "Enter The First digit",
         type: "number",
         name: "didifirst",
     },
     {
-        message: "Enter The Second Digit",
+        message: "Enter The Second digit",
         type: "number",
         name: "didisecond",
     },
