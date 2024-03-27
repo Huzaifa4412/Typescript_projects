@@ -1,9 +1,10 @@
+import { log } from 'console';
 import inquirer from 'inquirer'
 const recieve = await inquirer.prompt([
     {
-        message:'Please Enter Your Email',
-        name:'email',
-        type:'email'
+        message:'Please Enter Your username',
+        name:'username',
+        type:'input'
     },
     {
         message:'Please Enter Your Password',
@@ -11,5 +12,34 @@ const recieve = await inquirer.prompt([
         type:'password'
     }
 ])
-console.log(`Please Enter Your Email and Password again `);
+
+console.log(`Please Enter Your username and Password again`);
+let usernameConfirm = await inquirer.prompt({
+    message:'Please Enter Your username Again to confirm',
+    name:'username-com',
+})
+let passwordComfirm = await inquirer.prompt({
+    message:'Please Enter Your Password Again to confirm',
+    name:'password-com'
+})
+if (recieve.username == usernameConfirm['username-com'] && recieve.password == passwordComfirm['password-com']) {
+    console.log('You are login');
+    console.log(`You Enter The Correct Password`);
+    
+}
+else if(recieve.username != usernameConfirm['username-com']) {
+    console.log(`Please Enter the correct username`);
+    
+}
+else if (recieve.password != passwordComfirm['password-com']) {
+    console.log(`Please Enter the correct Password`);
+    
+}
+else{
+    console.log(`Please Enter the correct username and Password`);
+    
+}
+
+console.log(`Thank you for using our program`);
+console.log(`Developed By Huzaifa Mukhtar`);
 
