@@ -1,6 +1,6 @@
 {
-  "name": "rock_paper-siessor_game",
-  "version": "1.0.0",
+  "name": "@huzaifamukhtar/rock-paper-siessor",
+  "version": "1.1.1",
   "description": "A simple game which we play in our child hood",
   "main": "index.js",
   "type": "module",
@@ -12,12 +12,12 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "rock",
-    "paper",
+    "rock-paper",
+    "paper-scissor_game",
     "siessor",
-    "game"
+    "rock_paper_sciessor_game"
   ],
-  "author": "Huzaifa Mukhtar",
+  "author": "Huzaifa Mukhtar <huzaifamukhtar@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "inquirer": "^9.2.16"
