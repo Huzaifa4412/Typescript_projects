@@ -19,6 +19,10 @@
   "author": "Huzaifa Mukhtar",
   "license": "ISC",
   "devDependencies": {
+    "@types/inquirer": "^9.0.7",
     "@types/node": "^20.11.30"
+  },
+  "dependencies": {
+    "inquirer": "^9.2.16"
   }
 }
