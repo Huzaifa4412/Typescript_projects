@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "description": "This program cheaks take email, password, phone etc from user and re-cheak it and display message  ",
   "main": "index.js",
+  "type": "module",
+  "bin": "index.js",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
