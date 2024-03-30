@@ -39,7 +39,7 @@ else{
 }
 
 let user_preview = await inquirer.prompt({
-    message:"Do you want to preview your list \n for no type 'no'",
+    message:"Do you want to preview your list",
     name:"todo_preview",
     type:"list",
     choices:["Yes", "No"],
@@ -80,7 +80,7 @@ else if(ask_user.todo_type === "Multiple Data"){
     console.log(`Your todo ${todo_add_multiple.todo} is added to your list successfully`);
     }
     let user_preview = await inquirer.prompt({
-        message:"Do you want to preview your TODO list \n for no type 'no'",
+        message:"Do you want to preview your TODO list",
         name:"todo_preview",
         type:"list",
         choices:["Yes", "No"],
