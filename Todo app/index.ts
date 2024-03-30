@@ -105,14 +105,24 @@ condition = await inquirer.prompt([
         message:"Do you want to add more data in your Todo app",
         name:"todo_more",
         type:"list",
-        choices:["Yes","Preview list", "No (EXIT) ",  "Preview list and (EXIT)" ]
+        choices:["Yes","Preview list", "No (EXIT) ",  "Preview list and (EXIT)" ,"Delect last Edit"]
     },
 ])
 if (condition.todo_more === "Preview list"){ 
     console.log(todo_list);
     
 }
+else if (condition.todo_more === "Delect last Edit"){
+    todo_list.pop();
+    console.log(`Last edit delected Succesfully`);
+    
+    console.log(todo_list);
+    
+}
 console.log(condition.todo_more);
 }while(condition.todo_more === "Yes" || condition.todo_more ==="preview list")
+console.log(`Thanks for using our TODO app`);
+console.log(`Developed by Huzaifa Mukhtar`);
+
 
 
