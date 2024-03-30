@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 // Making a todo App/list
 import inquirer from 'inquirer'
 console.log(`Hello coder wellcome to our app`);

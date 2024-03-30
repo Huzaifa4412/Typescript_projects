@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 // Making a todo App/list
 import inquirer from 'inquirer';
 console.log(`Hello coder wellcome to our app`);
@@ -104,3 +105,5 @@ do {
     }
     console.log(condition.todo_more);
 } while (condition.todo_more === "Yes" || condition.todo_more === "preview list");
+console.log(`Thanks for using our TODO app`);
+console.log(`Developed by Huzaifa Mukhtar`);
