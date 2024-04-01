@@ -2,6 +2,7 @@ import inquirer from 'inquirer';
 console.log(`Wellcome to our Atm machine`);
 const pin = 4412;
 const User_money = 25000;
+let user_loop = undefined;
 let comfirm_user = undefined;
 const confirm_pin = await inquirer.prompt([
     {
@@ -48,5 +49,11 @@ do {
         type: "list",
         choices: ["Process more", "EXIT"],
     });
+    if (comfirm_user.user_choice == "Process more") {
+        console.log("You Choose Process more");
+        user_loop = true;
+    }
     console.log(`you choose ${comfirm_user.user_choice}`);
-} while (comfirm_user === "Process more");
+    comfirm_user === comfirm_user.user_choice;
+    console.log(`User loop ${user_loop}`);
+} while (comfirm_user = user_loop);
