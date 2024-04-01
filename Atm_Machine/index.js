@@ -1,9 +1,10 @@
 import inquirer from 'inquirer';
 console.log(`Wellcome to our Atm machine`);
 const pin = 4412;
-const User_money = 25000;
+let User_money = 25000;
 let user_loop = undefined;
 let comfirm_user = undefined;
+let saving = 2500;
 const confirm_pin = await inquirer.prompt([
     {
         message: "Enter your Pin",
@@ -19,7 +20,7 @@ do {
                 message: "What you want to do\nSelect your option",
                 name: `User_opt`,
                 type: 'list',
-                choices: ['Withdraw', 'Deposit', 'Balance Enquiry/Cheak']
+                choices: ['Withdraw', 'Deposite', 'Balance Enquiry/Cheak']
             },
         ]);
         if (user_opt.User_opt === 'Withdraw') {
@@ -29,15 +30,30 @@ do {
                 name: `withdraw_money`,
                 type: 'number',
             });
-            if (withdraw_money.withdraw_money < User_money) {
-                console.log(`Your Money left in the bank is ${User_money - withdraw_money.withdraw_money}`);
+            if (withdraw_money.withdraw_money <= User_money) {
+                console.log(`Your Money left in the bank is ${User_money -= withdraw_money.withdraw_money}`);
             }
             else {
                 console.log(`You don't have enough money in your account`);
             }
         }
+        else if (user_opt.User_opt === 'Deposite') {
+            let amm_deposite = await inquirer.prompt([{
+                    message: "How much ammount you want to Deposite",
+                    name: "ammount_deposite",
+                    type: 'number'
+                },
+                {
+                    message: 'Enter you Number for reciving message',
+                    name: "email_deposite",
+                    type: 'input'
+                }
+            ]);
+            console.log(`Your ${amm_deposite} is `);
+            console.log(`Confirm message is successfull sended to ${amm_deposite.email_deposite}`);
+        }
         else if (user_opt.User_opt === 'Balance Enquiry/Cheak') {
-            console.log(`Your Money in the bank is ${User_money}`);
+            console.log(`Your Money in the bank is "${User_money}"`);
         }
     }
     else {
@@ -52,6 +68,9 @@ do {
     if (comfirm_user.user_choice == "Process more") {
         console.log("You Choose Process more");
         user_loop = true;
+    }
+    else {
+        user_loop = false;
     }
     console.log(`you choose ${comfirm_user.user_choice}`);
     comfirm_user === comfirm_user.user_choice;
