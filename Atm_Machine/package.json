@@ -1,6 +1,6 @@
 {
-  "name": "atm_machine",
-  "version": "1.0.0",
+  "name": "@huzaifamukhtar/atm_machine",
+  "version": "3.2.2",
   "description": "A Atm machine machine program using typescript. nodejs and inquirer",
   "main": "index.js",
   "type": "module",
@@ -13,7 +13,8 @@
   },
   "keywords": [
     "atm",
-    "machine"
+    "machine",
+    "atm_machine_by_huzaifa_mukhtar"
   ],
   "author": "Huzaifa Mukhtar",
   "license": "ISC",

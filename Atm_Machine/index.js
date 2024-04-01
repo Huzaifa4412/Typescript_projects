@@ -1,7 +1,7 @@
 import inquirer from 'inquirer';
 console.log(`Wellcome to our Atm machine`);
 const pin = 4412;
-let User_money = 25000;
+let User_money = 60;
 let user_loop = undefined;
 let comfirm_user = undefined;
 let saving = 2500;
@@ -49,8 +49,10 @@ do {
                     type: 'input'
                 }
             ]);
-            console.log(`Your ${amm_deposite} is `);
+            console.log(`Your select ammount ${amm_deposite.amm_deposite}`);
+            User_money -= amm_deposite.ammount_deposite;
             console.log(`Confirm message is successfull sended to ${amm_deposite.email_deposite}`);
+            // console.log(amm_deposite.email_deposite);
         }
         else if (user_opt.User_opt === 'Balance Enquiry/Cheak') {
             console.log(`Your Money in the bank is "${User_money}"`);
@@ -63,16 +65,20 @@ do {
         message: "Do you want to process more or EXIT",
         name: "user_choice",
         type: "list",
-        choices: ["Process more", "EXIT"],
+        choices: ["Process more", "EXIT", "Cheak Ammount and (EXIT)"],
     });
     if (comfirm_user.user_choice == "Process more") {
         console.log("You Choose Process more");
         user_loop = true;
+    }
+    else if (comfirm_user.user_choice == "Cheak Ammount and (EXIT)") {
+        console.log(`Your ammount left in bank is ${User_money}`);
+        user_loop = false;
     }
     else {
         user_loop = false;
     }
     console.log(`you choose ${comfirm_user.user_choice}`);
     comfirm_user === comfirm_user.user_choice;
-    console.log(`User loop ${user_loop}`);
+    // console.log(`User loop ${user_loop}`);
 } while (comfirm_user = user_loop);
