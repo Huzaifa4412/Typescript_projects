@@ -5,7 +5,7 @@ const answer = await inquirer.prompt([
         message: "Enter The First digit",
         type: "number",
         name: "didifirst",
-    },
+    }, 
     {
         message: "Enter The Second digit",
         type: "number",
@@ -18,6 +18,7 @@ const answer = await inquirer.prompt([
         choices: ["Addition", "Subtraction", "Multiplication", "Division"],
     },
 ]);
+
 
 // conditional statement
 if (answer.operator === "Addition") {

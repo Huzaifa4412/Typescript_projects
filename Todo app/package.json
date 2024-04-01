@@ -1,6 +1,6 @@
 {
   "name": "@huzaifamukhtar/todo-app",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "A todo in which you be able to take, delect, push multiple data ",
   "type": "module",
   "bin": "index.js",
@@ -15,7 +15,8 @@
     "todolist",
     "todoapp",
     "todo",
-    "list"
+    "list",
+    "todoappbyhuzaifamukhtar"
   ],
   "author": "Huzaifa Mukhtar",
   "license": "ISC",
