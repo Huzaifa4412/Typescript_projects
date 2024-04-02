@@ -24,6 +24,7 @@ for (let i = 1; i <= 3; i++) {
 
   //? code to get ramdom number between 1 - 5
   // let compgues = Math.floor(Math.random() * 5 + 1);
+  //? Cheaking purpose only
   let compgues = 2;
   //? Taking input from user
   let answer = await inquirer.prompt([
@@ -80,6 +81,8 @@ for (let i = 1; i <= 3; i++) {
   } else {
     console.log("Please Enter the Number 1 - 5 you are on level one ");
   }
+  console.log(chalk.bold.red.underline(`Your points for Level 01 is ${user_point*5}`));
+  
 }
 if (user_point >= 1) {
   //! Level 02
@@ -96,9 +99,11 @@ if (user_point >= 1) {
     console.log(
       chalk.red(`Your chances left ${chances - i} Your chance taken ${i}`)
     );
-
+  
     //? code to get ramdom number between 1 - 7
-    let compgues = Math.floor(Math.random() * 7 + 1);
+    // let compgues = Math.floor(Math.random() * 7 + 1);
+    //? Cheaking purpose only
+    let compgues = 3;
     //? Taking input from user
     let answer = await inquirer.prompt([
       {
@@ -109,18 +114,18 @@ if (user_point >= 1) {
     ]);
     if (answer.userguess >= 1 && answer.userguess <= 7) {
       console.log("You type: " + answer.userguess);
-
+  
       if (answer.userguess === compgues) {
         console.log(chalk.red.bold.underline("Congratulation ") + "You Won");
         console.log(
-          `Computer number is:  ${compgues} and your number is:  ${answer.userguess}`
+          `Computer number is: ${compgues} and your number is: ${answer.userguess}`
         );
         user_point += 1;
       } else if (
         answer.userguess + 1 == compgues ||
         answer.userguess - 1 == compgues
       ) {
-        console.log("Number is Very close to computer number");
+        console.log(chalk.yellow("Number is Very close to computer number"));
         console.log(
           chalk.bgRed.white(
             `Computer number is:  ${compgues} and your number is:  ${answer.userguess}`
@@ -132,15 +137,17 @@ if (user_point >= 1) {
         //// console.log("Keep it up Legent you can do it");
       } else {
         if (answer.userguess < compgues) {
-          console.log("Number is less than computer number");
+          console.log(chalk.yellow.italic("Number is Less than computer number"));
+  
           console.log(
             `Computer number is:  ${compgues} and your number is:  ${answer.userguess}`
           );
+  
           //? You can you this if you want to motivate user
           //// console.log("Not a big Deal you have Power to achieve it ");
-          ////console.log("Keep it up Legent you can do it");
+          //// console.log("Keep it up Legent you can do it");
         } else if (answer.userguess > compgues) {
-          console.log("Number is greater than computer number");
+          console.log(chalk.yellow.italic("Number is greater than computer number"));
           console.log(
             `Computer number is:  ${compgues} and your number is:  ${answer.userguess}`
           );
@@ -150,8 +157,10 @@ if (user_point >= 1) {
         }
       }
     } else {
-      console.log("Please Enter the Number 1 - 7 you are on level one ");
+      console.log("Please Enter the Number 1 - 7 you are on level one Your one change deducted");
     }
+    console.log(chalk.bold.red.underline(`Your points for Level 01 is ${user_point*5}`));
+    
   }
 } else {
   console.log(

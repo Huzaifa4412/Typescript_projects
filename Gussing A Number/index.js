@@ -15,7 +15,7 @@ for (let i = 1; i <= 3; i++) {
     console.log(chalk.red(`Your chances left ${chances - i} Your chance taken ${i}`));
     //? code to get ramdom number between 1 - 5
     // let compgues = Math.floor(Math.random() * 5 + 1);
-    let compgues = 2;
+        let compgues = 2;
     //? Taking input from user
     let answer = await inquirer.prompt([
         {
@@ -42,14 +42,14 @@ for (let i = 1; i <= 3; i++) {
         }
         else {
             if (answer.userguess < compgues) {
-                console.log("Number is less than computer number");
+                console.log(chalk.yellow.italic("Number is Less than computer number"));
                 console.log(`Computer number is:  ${compgues} and your number is:  ${answer.userguess}`);
                 //? You can you this if you want to motivate user
                 //// console.log("Not a big Deal you have Power to achieve it ");
                 //// console.log("Keep it up Legent you can do it");
             }
             else if (answer.userguess > compgues) {
-                console.log(chalk.yellow.italic("Number is greater than computer number"));
+                console.log("Number is greater than computer number");
                 console.log(`Computer number is:  ${compgues} and your number is:  ${answer.userguess}`);
                 //? You can you this if you want to motivate user
                 ////  console.log("Not a big Deal you have Power to achieve it ");
@@ -60,6 +60,7 @@ for (let i = 1; i <= 3; i++) {
     else {
         console.log("Please Enter the Number 1 - 5 you are on level one ");
     }
+    console.log(`Your points for Level 01 is ${user_point * 5}`);
 }
 if (user_point >= 1) {
     //! Level 02
