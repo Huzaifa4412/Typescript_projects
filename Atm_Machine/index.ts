@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import inquirer from 'inquirer'
 console.log(`Wellcome to our Atm machine`);
 const pin = 4412;
@@ -71,7 +72,7 @@ let comfirm_user = await inquirer.prompt({
     message:"Do you want to process more or EXIT",
     name:"user_choice",
     type:"list",
-    choices:["Process more","EXIT", "Cheak Ammount and (EXIT)"],
+    choices:["Process more","EXIT","Cheak Ammount and process more", "Cheak Ammount and (EXIT)"],
 })
 
 if (comfirm_user.user_choice == "Process more") {
@@ -81,6 +82,11 @@ if (comfirm_user.user_choice == "Process more") {
 else if(comfirm_user.user_choice == "Cheak Ammount and (EXIT)"){
     console.log(`Your ammount left in bank is ${User_money}`);
     user_loop = false;
+}
+else if(comfirm_user.user_choice == "Cheak Ammount and process more"){
+    console.log(`You Ammount in our back is ${User_money}`);
+    
+    user_loop = true;
 }
 else{
     user_loop = false;

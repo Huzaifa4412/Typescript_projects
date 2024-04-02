@@ -1,6 +1,6 @@
 {
   "name": "@huzaifamukhtar/atm_machine",
-  "version": "3.2.2",
+  "version": "3.3.3",
   "description": "A Atm machine machine program using typescript. nodejs and inquirer",
   "main": "index.js",
   "type": "module",
