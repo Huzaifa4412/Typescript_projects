@@ -28,7 +28,7 @@ for (let i = 1; i <= 3; i++) {
     if (answer.userguess >= 1 && answer.userguess <= 5) {
         console.log("You type: " + answer.userguess);
         if (answer.userguess === compgues) {
-            console.log(chalk.red.bold.inverse("Congratulation ") + "You Won");
+            console.log(chalk.inverse.bold("Congratulation ") + "You Won");
             console.log(`Computer number is: ${compgues} and your number is: ${answer.userguess}`);
             user_point += 1;
         }
@@ -86,7 +86,7 @@ if (user_point >= 1) {
         if (answer.userguess >= 1 && answer.userguess <= 7) {
             console.log("You type: " + answer.userguess);
             if (answer.userguess === compgues) {
-                console.log(chalk.bold.inverse("Congratulation ") + "You Won");
+                console.log(chalk.inverse.bold("Congratulation ") + "You Won");
                 console.log(`Computer number is: ${compgues} and your number is: ${answer.userguess}`);
                 user_point += 1;
             }
