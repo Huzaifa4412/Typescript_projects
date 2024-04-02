@@ -8,7 +8,7 @@ import chalk from "chalk";
 // ** Initializing Point for whole Project
 let user_point = 0;
 //! Level 01
-console.log(`Wellcome to Level 01`);
+console.log(`Wellcome to Level 01 (Easy)`);
 console.log(
   chalk.white.yellow(
     `You have Three (3) chances \n You must have to Guess 1 correct number to complete the level`
@@ -38,7 +38,7 @@ for (let i = 1; i <= 3; i++) {
     console.log("You type: " + answer.userguess);
 
     if (answer.userguess === compgues) {
-      console.log(chalk.red.bold.underline("Congratulation ") + "You Won");
+      console.log(chalk.red.bold.inverse("Congratulation ") + "You Won");
       console.log(
         `Computer number is: ${compgues} and your number is: ${answer.userguess}`
       );
@@ -86,7 +86,7 @@ for (let i = 1; i <= 3; i++) {
 }
 if (user_point >= 1) {
   //! Level 02
-  console.log(`Wellcome to Level 02`);
+  console.log(`Wellcome to Level 02 (Medium)`  );
   console.log(
     chalk.white.yellow(
       `You have Five (5) chances \nYou must have to Guess any 3 correct number to complete the level 2`
@@ -116,7 +116,7 @@ if (user_point >= 1) {
       console.log("You type: " + answer.userguess);
   
       if (answer.userguess === compgues) {
-        console.log(chalk.red.bold.underline("Congratulation ") + "You Won");
+        console.log(chalk.bold.inverse("Congratulation ") + "You Won");
         console.log(
           `Computer number is: ${compgues} and your number is: ${answer.userguess}`
         );
@@ -159,15 +159,19 @@ if (user_point >= 1) {
     } else {
       console.log("Please Enter the Number 1 - 7 you are on level one Your one change deducted");
     }
-    console.log(chalk.bold.red.underline(`Your points for Level 01 is ${user_point*5}`));
+    console.log(chalk.bold.red.underline(`Your Total points ${user_point*5}`));
     
   }
 } else {
   console.log(
     chalk.red.underline.bold(
-      `Unfortunatily you can't go to level to because you don't Guess any correct number`
+      `Unfortunatily you can't go to above level to because you don't Guess any correct number`
     )
   );
 }
-console.log(chalk.bgRed.white(`Thank you for using this program ❤  😍`));
+if (user_point>=4) {
+  console.log(`Wellcome to level 3 the final and the hardest`);
+  
+}
+console.log(chalk.bgRed.white(`Thank you for using this program`));
 console.log(`Developed By: Huzaifa Mukhtar`);
