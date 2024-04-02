@@ -49,7 +49,7 @@ for (let i = 1; i <= 3; i++) {
                 //// console.log("Keep it up Legent you can do it");
             }
             else if (answer.userguess > compgues) {
-                console.log("Number is greater than computer number");
+                console.log(chalk.yellow.italic("Number is greater than computer number"));
                 console.log(`Computer number is:  ${compgues} and your number is:  ${answer.userguess}`);
                 //? You can you this if you want to motivate user
                 ////  console.log("Not a big Deal you have Power to achieve it ");
