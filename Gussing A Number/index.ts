@@ -7,6 +7,7 @@ import inquirer from "inquirer";
 import chalk from "chalk";
 // ** Initializing Point for whole Project
 let user_point = 0;
+let badge = undefined;
 console.log(chalk.inverse(`Hello Player wellcome to world Hardest game`));
 console.log(chalk.blue(`This game contain three levels\n1)Easy 2)Medium 3)Hard\nIf you pass level 1 you achieve Bronze medal, if you pass 2 and 3 level you achieve Silver and Gold badges respectively`))
 //! Level 01
@@ -88,16 +89,19 @@ for (let i = 1; i <= 3; i++) {
   console.log(
     chalk.bold.red.underline(`Your points for Level 01 is ${user_point * 5}`)
   );
+  badge = "Bronze"
+}
+if (user_point >= 1) {
   console.log(
     chalk.bold.inverse.underline(
       `Congratulation Champ for Completing level 01 with ${user_point * 5}`
     )
+
   );
-}
-if (user_point >= 1) {
+  badge = 'Silver';
   //! Level 02
   console.log(
-    `Wellcome Champ to the  level 02 of our game You can got Silver Badge`
+    `Wellcome Champ to the  level 02 of our game You can got Silver Badge if you pass this level`
   );
   console.log(
     chalk.white.yellow(
@@ -178,11 +182,9 @@ if (user_point >= 1) {
     console.log(
       chalk.bold.red.underline(`Your Total points ${user_point * 5}`)
     );
-    console.log(
-      chalk.bold.inverse.underline(
-        `Congratulation Champ for Completing level 02 with ${user_point * 5}`
-      )
-    );
+    console.log(chalk.blue(`You have the ability to cross level 02`));
+    
+    
   }
 } else {
   console.log(
@@ -196,9 +198,14 @@ if (user_point >= 4) {
     `Wellcome Champ to the Hardest level of our game if you be able to pass it you goona to bhe world best Player and You can got Gold Badge`
   );
   if (user_point >= 4) {
-    //! Level 02
+    //! Level 03
     console.log(
-      `Wellcome Champ to the  level 03 of our game You can got Silver Badge`
+      chalk.bold.inverse.underline(
+        `Congratulation Champ for Completing level 03 with ${user_point * 5}`
+      )
+    );
+    console.log(
+      `Wellcome Champ to the  level 03 of our game You can got Gold Badge`
     );
     console.log(
       chalk.white.yellow(
@@ -285,6 +292,7 @@ if (user_point >= 4) {
         )
       );
     }
+    badge = 'Gold';
   } else {
     console.log(
       chalk.red.underline.bold(
@@ -296,5 +304,7 @@ if (user_point >= 4) {
   console.log(chalk.inverse("Well done Champ"))
   
 }
+console.log(`You got ${badge} Badge`);
+
 console.log(chalk.bgRed.white(`Thank you for using this program`));
 console.log(`Developed By: Huzaifa Mukhtar`);
