@@ -1,9 +1,13 @@
 {
-  "name": "simple_calculator",
-  "version": "1.0.0",
+  "name": "@huzaifamukhtar/simple_calculator",
+  "version": "3.3.2",
   "description": "A simple calculator which perform Basic Addition, Substraction, Muliplication, Division",
   "main": "index.js",
   "type": "module",
+  "bin": "index.js",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

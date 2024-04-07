@@ -1,37 +1,62 @@
+#! /usr/bin/env node
+// * Calculator using function and loop
 import inquirer from "inquirer";
-const answer = await inquirer.prompt([
-    {
-        message: "Enter The First digit",
-        type: "number",
-        name: "didifirst",
-    },
-    {
-        message: "Enter The Second digit",
-        type: "number",
-        name: "didisecond",
-    },
-    {
-        message: "Enter The Operator",
-        name: "operator",
-        type: "list",
-        choices: ["Addition", "Subtraction", "Multiplication", "Division"],
-    },
-]);
-// conditional statement
-if (answer.operator === "Addition") {
-    console.log(`Your result is : ${answer.didifirst} + ${answer.didisecond} = ${answer.didifirst + answer.didisecond}`);
-}
-else if (answer.operator === "Subtraction") {
-    console.log(`Your result is : ${answer.didifirst} - ${answer.didisecond} = ${answer.didifirst - answer.didisecond}`);
-}
-else if (answer.operator === "Multiplication") {
-    console.log(`Your result is : ${answer.didifirst} * ${answer.didisecond} = ${answer.didifirst * answer.didisecond}`);
-}
-else if (answer.operator === "Division") {
-    console.log(`Your result is : ${answer.didifirst} / ${answer.didisecond} = ${answer.didifirst / answer.didisecond}`);
-}
-else {
-    console.log(`Please Enter the Number`);
-}
-console.log(`Thank you for using this program ❤  😍`);
-console.log(`Developed By: Huzaifa Mukhtar`);
+let use_more = undefined;
+let comfirm_user = undefined;
+console.log(`Welcome to the calculator`);
+do {
+    let answer = await inquirer.prompt([
+        {
+            message: "Enter The First Number",
+            type: "number",
+            name: "didifirst",
+        },
+        {
+            message: "Enter The Second Number",
+            type: "number",
+            name: "didisecond",
+        },
+        {
+            message: "Select The Operator",
+            type: "list",
+            name: "operator",
+            choices: ["+", "-", "*", "/"],
+        },
+    ]);
+    // Function
+    let calculator = async (didifirst, didisecond) => {
+        if (answer.operator == "+") {
+            return console.log(`Your result is : ${answer.didifirst} + ${answer.didisecond} = ${answer.didifirst + answer.didisecond}`);
+        }
+        else if (answer.operator == "-") {
+            return console.log(`Your result is : ${answer.didifirst} - ${answer.didisecond} = ${answer.didifirst - answer.didisecond}`);
+        }
+        else if (answer.operator == "*") {
+            return console.log(`Your result is : ${answer.didifirst} * ${answer.didisecond} = ${answer.didifirst * answer.didisecond}`);
+        }
+        else if (answer.operator == "/") {
+            return console.log(`Your result is : ${answer.didifirst} / ${answer.didisecond} = ${answer.didifirst / answer.didisecond}`);
+        }
+        else {
+            return console.log("Invalid operation Please select the valid operation");
+        }
+    };
+    // Function Call
+    calculator(answer.didifirst, answer.didisecond);
+    let ask_user = await inquirer.prompt([
+        {
+            message: "Do Your want to more calculate or EXIT",
+            type: "list",
+            name: "ask_user",
+            choices: ["Use-more", "EXIT"],
+        },
+    ]);
+    // let use_more = false;
+    if (ask_user.ask_user === "Use-more") {
+        use_more = true;
+    }
+    else {
+        console.log("Thank you for using this program ❤ 😊 😍 ");
+        use_more = false;
+    }
+} while (comfirm_user = use_more);

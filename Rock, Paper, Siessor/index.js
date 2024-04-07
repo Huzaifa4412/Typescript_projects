@@ -37,7 +37,7 @@ if (answer.useropt >= 1 && answer.useropt <= 3) {
     if (answer.useropt === compopt) {
         console.log("You both select the same Tool \n Game Draw");
     }
-    if (answer.useropt === 1 && compopt === 2) {
+    else if (answer.useropt === 1 && compopt === 2) {
         console.log("'Congratulation you 'Won''");
     }
     else if (answer.useropt === 2 && compopt === 3) {
