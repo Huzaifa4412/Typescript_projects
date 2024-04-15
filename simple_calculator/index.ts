@@ -71,3 +71,41 @@ do {
       use_more = false;
   }
 } while (comfirm_user = use_more)
+
+   // ! Second Method to perform calculation
+  // let answer = await inquirer.prompt([
+  //   {
+  //     message: "Enter The First Number",
+  //     type: "number",
+  //     name: "didifirst",
+  //   },
+  //   {
+  //     message: "Enter The Second Number",
+  //     type: "number",
+  //     name: "didisecond",
+  //   },
+  //   {
+  //     message: "Select The Operator",
+  //     type: "list",
+  //     name: "operator",
+  //     choices: ["+", "-", "*", "/"],
+  //   },
+  // ]);
+  
+  // let calculator = (didifirst:number, didisecond:number, operator:string) => {
+  //   if (operator === "+") {
+  //     return didifirst + didisecond;
+  //   } else if (operator === "-") {
+  //     return didifirst - didisecond;
+  //   } else if (operator === "*") {
+  //     return didifirst * didisecond;
+  //   } else if (operator === "/") {
+  //     return didifirst / didisecond;
+  //   } else {
+  //     return "Invalid operation Please select the valid operation";
+  //   }
+  // };
+  
+  // let result = calculator(answer.didifirst, answer.didisecond, answer.operator);
+  
+  // console.log(`Your result is : ${result}`);

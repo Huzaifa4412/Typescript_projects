@@ -1,5 +1,5 @@
 #! /usr/bin/env node
-// * Calculator using function and loop
+// // * Calculator using function and loop
 import inquirer from "inquirer";
 let use_more = undefined;
 let comfirm_user = undefined;
@@ -42,21 +42,59 @@ do {
         }
     };
     // Function Call
-    calculator(answer.didifirst, answer.didisecond);
+    let result = calculator(answer.didifirst, answer.didisecond);
+    console.log(result);
     let ask_user = await inquirer.prompt([
         {
             message: "Do Your want to more calculate or EXIT",
             type: "list",
             name: "ask_user",
-            choices: ["Use-more", "EXIT"],
+            choices: ["Use-previous value", "Use-more from Fresh", "EXIT",],
         },
     ]);
-    // let use_more = false;
+    //   // let use_more = false;
     if (ask_user.ask_user === "Use-more") {
         use_more = true;
+    }
+    else if (ask_user.ask_user === 'Use-previous value') {
+        console.log(result);
     }
     else {
         console.log("Thank you for using this program ❤ 😊 😍 ");
         use_more = false;
     }
 } while (comfirm_user = use_more);
+// ! Second Method to perform calculation
+// let answer = await inquirer.prompt([
+//   {
+//     message: "Enter The First Number",
+//     type: "number",
+//     name: "didifirst",
+//   },
+//   {
+//     message: "Enter The Second Number",
+//     type: "number",
+//     name: "didisecond",
+//   },
+//   {
+//     message: "Select The Operator",
+//     type: "list",
+//     name: "operator",
+//     choices: ["+", "-", "*", "/"],
+//   },
+// ]);
+// let calculator = (didifirst:number, didisecond:number, operator:string) => {
+//   if (operator === "+") {
+//     return didifirst + didisecond;
+//   } else if (operator === "-") {
+//     return didifirst - didisecond;
+//   } else if (operator === "*") {
+//     return didifirst * didisecond;
+//   } else if (operator === "/") {
+//     return didifirst / didisecond;
+//   } else {
+//     return "Invalid operation Please select the valid operation";
+//   }
+// };
+// let result = calculator(answer.didifirst, answer.didisecond, answer.operator);
+// console.log(`Your result is : ${result}`);
