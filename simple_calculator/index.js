@@ -1,5 +1,5 @@
 #! /usr/bin/env node
-// // * Calculator using function and loop
+// * Calculator using function and loop
 import inquirer from "inquirer";
 let use_more = undefined;
 let comfirm_user = undefined;
@@ -42,22 +42,18 @@ do {
         }
     };
     // Function Call
-    let result = calculator(answer.didifirst, answer.didisecond);
-    console.log(result);
+    calculator(answer.didifirst, answer.didisecond);
     let ask_user = await inquirer.prompt([
         {
             message: "Do Your want to more calculate or EXIT",
             type: "list",
             name: "ask_user",
-            choices: ["Use-previous value", "Use-more from Fresh", "EXIT",],
+            choices: ["Use-more", "EXIT"],
         },
     ]);
-    //   // let use_more = false;
+    // let use_more = false;
     if (ask_user.ask_user === "Use-more") {
         use_more = true;
-    }
-    else if (ask_user.ask_user === 'Use-previous value') {
-        console.log(result);
     }
     else {
         console.log("Thank you for using this program ❤ 😊 😍 ");
