@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Making a todo App/list
 import inquirer from "inquirer";
-console.log(`Hello coder wellcome to our app`);
+console.log(`Hello coder wellcome to My app`);
 let condition = undefined;
 let todo_list = [];
 do {
@@ -116,3 +116,4 @@ do {
     condition.todo_more === "Preview list");
 console.log(`Thanks for using our TODO app`);
 console.log(`Developed by Huzaifa Mukhtar`);
+console.log(`........`);
