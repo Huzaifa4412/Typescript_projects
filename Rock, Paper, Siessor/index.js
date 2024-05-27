@@ -82,8 +82,13 @@ do {
 } while (loop);
 user_point *= 100 / 10;
 comp_point *= 100 / 10;
-number_of_games *= 100 / 10;
-console.log(`The number of games you played ${chalk.black.bold(number_of_games)}`);
+if (user_point > comp_point) {
+    console.log(chalk.blue.bold(`Congratulation you won you point are greater than computer points`));
+}
+else {
+    console.log(chalk.green(`This time computer won \nBetter luck next time`));
+}
+console.log(`The number of games you played ${chalk.blue.bold(number_of_games)}`);
 console.log(`Your point is "${chalk.yellowBright.bold(user_point)}" and computer point is "${chalk.yellowBright.bold(comp_point)}"`);
 console.log(chalk.blueBright.bold(`Thank you for using this program`));
 console.log("Developed By: ", chalk.magentaBright.bold(`Huzaifa Mukhtar`));

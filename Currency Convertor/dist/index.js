@@ -45,7 +45,7 @@ do {
     let ammount = ask_user.amount;
     let base_ammount = ammount / from_ammount;
     let result = base_ammount * to_ammount;
-    console.log(chalk.yellow.visible.bold(`Your amount is ${chalk.blue.bold(result)}`));
+    console.log(chalk.yellow.visible.bold(`Your amount is ${chalk.blue.bold(result.toFixed(2))}`));
     let ask_user_more = await inquirer.prompt({
         message: "Do you want to use more repeat ?",
         name: "use_more",
