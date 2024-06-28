@@ -1,73 +1,70 @@
-import promptSync from "prompt-sync";
 import inquirer from "inquirer";
 import chalk from "chalk";
-let loop: boolean;
-const prompt = promptSync();
-// Global Array that stores all tasks
-let tasks: string[] = [];
-// Making a function that takes input from user and add it to tasks
-function addTask(): void {
-  const task: string = chalk.blue(prompt("Enter task that you want to add : "));
-  tasks.push(task);
-  console.log(chalk.green("Task added successfully!"));
-}
-// Making a function that list all the tasks
-function showTodos(): void {
-  console.log(chalk.blue("Tasks:"));
-  tasks.forEach((todo, index) => {
-    console.log(chalk.redBright(`${index + 1}) ${todo}`));
+import PromptSync from "prompt-sync";
+const prompt = PromptSync();
+const todos: Array<string> = [];
+// !  Function to view todo list
+function viewTodos() {
+  console.log(chalk.greenBright("Your Todo List : "));
+  todos.forEach((todo, index) => {
+    console.log(`${index + 1}. ${todo}`);
   });
+  user_operation();
 }
-// Making a function that deletes a task
-function deleteTask(): void {
-  let delIndex = parseInt(
-    prompt("Enter the Index number of the you want to delete : ")
-  );
-  tasks.splice(delIndex - 1, 1);
+//  ! Function to Add todos
+function addTodos() {
+  let add = chalk.blue(prompt(chalk.blueBright("Enter the Todo that you want to add : ")));
+  todos.push(add);
+  user_operation();
 }
 
-async function user_operation(callback: () => void) {
-  let ask_user = await inquirer.prompt([
-    {
-      message: "What type of Operation you want to perform ? ",
-      name: "user_chose",
-      type: "list",
-      choices: ["Add Task", "Show task", "Delect task"],
-    },
-  ]);
-  if (ask_user.user_chose === "Add Task") {
-    addTask();
-  } else if (ask_user.user_chose === "Show task") {
-    showTodos();
-  } else if (ask_user.user_chose === "Delect task") {
-    deleteTask();
+// ! Function to update todos
+function updateTodos() {
+  let update = parseInt(
+   prompt(`Enter the Todo ${chalk.blueBright("index")} number that you want to update : `)
+  );
+  let index = update - 1;
+  todos[index] = chalk.blueBright(prompt("Enter the new Todo : "));
+  user_operation();
+}
+// ! Function to delect todos
+function delectTodos() {
+  let del = parseInt(
+    prompt("Enter the Todo index number that you want to delete : ")
+  );
+  todos.splice(del - 1, 1);
+  user_operation();
+}
+// ! Function to exit to app
+function exit() {
+  console.log(chalk.greenBright("Bye Bye"));
+}
+// ! Function to operate all todos
+async function user_operation() {
+  let ask_user = await inquirer.prompt({
+    type: "list",
+    name: "operation",
+    message: "Select the operation that you want to perform : ",
+    choices: ["Add Todo", "View Todo", "Update Todo", "Delete Todo", "Exit"],
+  });
+  if (ask_user.operation === "Add Todo") {
+    addTodos();
+  } else if (ask_user.operation === "View Todo") {
+    viewTodos();
+  } else if (ask_user.operation === "Update Todo") {
+    updateTodos();
+  } else if (ask_user.operation === "Delete Todo") {
+    delectTodos();
+  } else if (ask_user.operation === "Exit") {
+    exit();
   }
-  callback();
 }
-async function userMore() {
-  
-    let ask_user1 = await inquirer.prompt({
-      message: "Do you want to continue",
-      type: "list",
-      name: "user_chose",
-      choices: ["Yes", "No"],
-      default: "Yes",
-    });
-    if (ask_user1.user_chose === "Yes") {
-      loop = true;
-    } else {
-      loop = false;
-    }
-  
-}
-function callback(callback: () => void) {
-  do {
-    callback();
-  } while (loop);
-}
-do{callback(()=>{
-  user_operation(()=>{
-    userMore()
-  })
-})
-}while(loop)
+// Calling all functions
+// user_operation()
+// addTodos()
+// addTodos()
+// viewTodos()
+// updateTodos()
+// delectTodos()
+// viewTodos()
+user_operation();
